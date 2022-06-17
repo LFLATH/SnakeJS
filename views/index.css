@@ -1,0 +1,77 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: white;
+}
+
+#heading{
+    font-size: 100pt;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+#button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#login{
+    font-size: 25pt;
+    border: none;    
+}
+
+#login:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#game-wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#score{
+    margin-left: 200px;
+}
+#highscore{
+    margin-right: 200px;
+}
+
+#signup-header{
+    font-size: 48pt;
+    text-align: center;
+}
+
+#signup-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box{
+    color: black;
+    background-color: white;
+}
+.form-box:focus{
+    outline: none;
+}
+
+.signup-button{
+    font-size: 24pt;
+}
+.signup-button:hover{
+    cursor: pointer;
+}
