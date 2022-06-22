@@ -36,7 +36,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT 
 
 const expressLayouts = require('express-ejs-layouts');
 
