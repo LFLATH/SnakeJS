@@ -8,10 +8,28 @@ require('./config/passport')(passport);
 
 const db = require('./config/keys').MongoURI;
 
-mongoose.connect(db, { useNewUrlParser: true })
-    .then(() => console.log("DB Connected"))
-    .catch(err => console.log(err))
+
+
+const connectDatabase = async () => {
+  try {
+    mongoose.set("useNewUrlParser", true);
+    
+    await mongoose.connect(db);
+
+    console.log("connected to database");
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+};
+
+connectDatabase();
+
+
 app.use(express.static(__dirname + '/views'));
+
+
+
 
 app.use(
     session({
