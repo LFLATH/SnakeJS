@@ -75,3 +75,8 @@
 .signup-button:hover{
     cursor: pointer;
 }
+
+.loggedin{
+    text-align: center;
+    font-size: 18pt;
+}

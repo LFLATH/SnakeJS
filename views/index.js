@@ -14,6 +14,13 @@ var appleXPOS = (appleYPOS = 15);
 
 highscorebox = document.getElementById("highscore")
 scorebox = document.getElementById("score")
+function updateDB(s){
+  let username = document.getElementById("user.profile");
+  username = username.textContent;
+  console.log(username);
+  console.log(s);
+  $.post('/home', {username: username, highscore: s});
+};
 
 window.onload = function() {
   field = document.getElementById("game-area");
@@ -57,6 +64,7 @@ function draw() {
         alert(`Your score is ${score}`)
         highscore = Math.max(highscore, score)
         highscorebox.textContent = `HIGHSCORE: ${highscore}`
+        updateDB(highscore)
         score = 0
         scorebox.textContent = `SCORE: ${score}`
 
@@ -71,6 +79,8 @@ function draw() {
         alert(`Your score is ${score}`)
         highscore = Math.max(highscore, score)
         highscorebox.textContent = `HIGHSCORE: ${highscore}`
+        updateDB(highscore)
+
         score = 0
         scorebox.textContent = `SCORE: ${score}`
 
@@ -88,6 +98,8 @@ function draw() {
         alert(`Your score is ${score}`)
         highscore = Math.max(highscore, score)
         highscorebox.textContent = `HIGHSCORE: ${highscore}`
+        updateDB(highscore)
+
         score = 0
         scorebox.textContent = `SCORE: ${score}`
 
@@ -104,6 +116,8 @@ function draw() {
         alert(`Your score is ${score}`)
         highscore = Math.max(highscore, score)
         highscorebox.textContent = `HIGHSCORE: ${highscore}`
+        updateDB(highscore)
+
         score = 0
         scorebox.textContent = `SCORE: ${score}`
 
@@ -145,6 +159,7 @@ function draw() {
             alert(`Your score is ${score}`)
             highscore = Math.max(highscore, score)
             highscorebox.textContent = `HIGHSCORE: ${highscore}`
+            updateDB(highscore)
             score = 0
             scorebox.textContent = `SCORE: ${score}`
 
