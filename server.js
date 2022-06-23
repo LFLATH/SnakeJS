@@ -6,24 +6,16 @@ const session = require('express-session');
 const flash = require("connect-flash");
 require('./config/passport')(passport); 
 
-
-
-const mongoose = require('mongoose');
-require('dotenv').config();
-
-const connectToMongo = async() => {
-    await mongoose.connect(process.env.MongoURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false,
-    });
-    return mongoose;
-};
-
-await connectToMongo().then(async() => console.log('connected yeee'));
+const db = require('./config/keys').MongoURI;
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
 
 
 
+
+
+app.use(express.static(__dirname + '/views'));
 
 app.use(
     session({
@@ -36,7 +28,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const port = process.env.PORT 
+const port = process.env.PORT || 3000
 
 const expressLayouts = require('express-ejs-layouts');
 
